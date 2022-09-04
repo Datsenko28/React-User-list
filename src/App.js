@@ -12,7 +12,7 @@ function App() {
       SetUsers(json.data);
     }).catch(err => {
       console.warn(err);
-      alert('Помилка при отриманні користувачів')
+      alert('Помилка при отриманні користувачiв')
     })
   }, [])
 
