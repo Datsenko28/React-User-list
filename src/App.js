@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const [users, SetUsers] = useState();
+  const [isLoading, SetLoading] = useState(true);
 
   useEffect(() => {
     fetch('https://reqres.in/api/users')
@@ -18,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      <Users items={users}/>
+      <Users items={users} isLoading={isLoading}/>
     </div>
   );
 }
