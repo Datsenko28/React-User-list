@@ -1,6 +1,6 @@
 import React from 'react';
 
-const User = ({id, email, first_name, last_name, avatar}) => (
+const User = ({id, email, first_name, last_name, avatar, onClickInvite, isInvated}) => (
   <li>
     <div>
       <img className="avatar" src={avatar} alt="User" />
@@ -14,7 +14,10 @@ const User = ({id, email, first_name, last_name, avatar}) => (
         </p>
       </div>
     </div>
-    <img className="action" src="/assets/plus.png" alt="Action" />
+    <img onClick={() => onClickInvite(id)} 
+    className="action" 
+    src={`/assets/${isInvated ? 'minus' : 'plus'}.png`} 
+    alt="Action" />
   </li>
 );
 export default User;
