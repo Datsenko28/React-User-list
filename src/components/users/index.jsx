@@ -2,7 +2,7 @@ import React from 'react';
 import Skeleton from './Skeleton';
 import User from './User';
 
-const Users = ({items, isLoading, searchValue, onChangeSearchValue, invites, onClickInvite}) => {
+const Users = ({items, isLoading, searchValue, onChangeSearchValue, invites, onClickInvite, onClickSendInvites}) => {
 
   // console.log(searchValue);
     return(
@@ -41,7 +41,12 @@ const Users = ({items, isLoading, searchValue, onChangeSearchValue, invites, onC
        ))}
     </ul>
   )}
-  <button className="send-invite-btn">Отправить приглашение</button>
+  {
+    invites.length > 0  && (
+      <button onClick={window.XMLHttpRequestUpload()} onClick={onClickSendInvites} className="send-invite-btn">
+        Отправить приглашение
+      </button>)
+  }
     </>
     );
 };

@@ -34,18 +34,26 @@ function App() {
     }
   }
 
+    const onClickSendInvites = () => {
+      setSuccsess(true);
+    }
+
+
   return (
     <div className="App">
-      {
-        succsess ? <Success/> :  <Users 
+      {succsess ? (
+      <Success count={invites.length}/>
+       ) :  (
+      <Users 
         onChangeSearchValue={onChangeSearchValue}
         searchValue={searchValue} 
         items={users} 
         isLoading={isLoading}
         invites={invites}
         onClickInvite={onClickInvite}
+        onClickSendInvites={onClickSendInvites}
         />
-      }
+       )}
      
       
     </div>
